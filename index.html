@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda Online de el Peruano</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', sans-serif;
+            background-color: #14e1ab;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #13bee8;
+            color: rgb(0, 0, 0);
+            padding: 10px;
+            text-align: center;
+            
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        .product {
+            background-color: rgb(255, 255, 255);
+            border: 1px solid #1e00fd;
+            border-radius: 8px;
+            margin: 15px;
+            width: 250px;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .product img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+        .product h3 {
+            color: #333;
+        }
+        .product p {
+            color: #555;
+            font-size: 14px;
+        }
+        .price {
+            font-size: 20px;
+            color: rgb(33, 136, 56);
+            font-weight: bold;
+        }
+        .quantity {
+            margin: 10px 0;
+        }
+        .quantity input {
+            width: 50px;
+            padding: 5px;
+            text-align: center;
+        }
+        .add-to-cart {
+            background-color: #3b28a7;
+            color: rgb(255, 255, 255);
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 18px;
+        }
+        .add-to-cart:hover {
+            background-color: rgb(33, 136, 56);
+        }
+
+        
+
+        #shopping-cart {
+        max-width: 500px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fbfbfc;
+        border: 10px solid #296ef9;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(234, 215, 7, 0.1);
+    }
+
+    #shopping-cart h2 {
+        text-align: center;
+        color: #333333;
+        margin-bottom: 20px;
+    }
+
+    #cart-items {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    #cart-items li {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+        border-bottom: 2px solid #000000;
+    }
+
+    #cart-items li img {
+        width: 40px;
+        height: 40px;
+        border-radius: 4px;
+        margin-right: 10px;
+    }
+
+    #cart-items li span {
+        flex: 1;
+        font-size: 14px;
+        color: #000000;
+    }
+
+    #cart-total {
+        text-align: right;
+        font-size: 18px;
+        font-weight: bold;
+        color: #333;
+        margin-top: 10px;
+    }
+
+    #clear-cart {
+        display: block;
+        width: 50%;
+        padding: 10px;
+        margin-top: 15px;
+        background-color: #ff0000;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 15px;
+        cursor: pointer;
+    }
+
+    #clear-cart:hover {
+        background-color: #ff0303;
+    }
+        
+        
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Bienvenido a la tienda el Peruano</h1>
+    <h2>Compra los mejores productos al mejor precio, chacha chauuuu :)</h2>
+</header>
+
+
+<div class="container">
+    <!-- Producto 1 -->
+    <div class="product">
+        <img src="https://walmartni.vtexassets.com/arquivos/ids/329511/Gaseosa-Coca-Cola-Regular-Lata-354-ml-2-7637.jpg" alt="Producto 1">
+        <h3>Coca cola en lata</h3>
+        <p>Bebida gaseosa.</p>
+        <div class="price">C$30.00</div>
+        <div class="quantity">
+            <label for="quantity1">Cantidad: </label>
+            <input type="number" id="quantity1" name="quantity" min="1" value="1">
+        </div>
+        <button class="add-to-cart">Añadir al carrito</button>
+    </div>
+
+
+    <!-- Producto 2 -->
+    <div class="product">
+        <img src="https://www.coca-cola.com/content/dam/onexp/gt/es/brands/coca-cola/es_coca-cola_prod_orginal-bottle-600mL_750x750_v1.jpg" alt="Producto 2">
+        <h3>Coca Cola en botella</h3>
+        <p>Bebida Gaseosa</p>
+        <div class="price">C$20.00</div>
+        <div class="quantity">
+            <label for="quantity2">Cantidad: </label>
+            <input type="number" id="quantity2" name="quantity" min="1" value="1">
+        </div>
+        <button class="add-to-cart">Añadir al carrito</button>
+    </div>
+
+
+    <!-- Producto 3 -->
+    <div class="product">
+        <img src="https://walmartni.vtexassets.com/arquivos/ids/181279/Refresco-Gaseosa-Pepsi-Reg-Lata-335-Ml-1-6136.jpg?v=637722641110930000" alt="Producto 3">
+        <h3>Pepsi en lata</h3>
+        <p>Bebida Gaseosa</p>
+        <div class="price">C$28.00</div>
+        <div class="quantity">
+            <label for="quantity3">Cantidad: </label>
+            <input type="number" id="quantity3" name="quantity" min="1" value="1">
+        </div>
+        <button class="add-to-cart">Añadir al carrito</button>
+    </div>
+</div>
+
+
+<!-- separacion-->
+<div class="container">
+    <!-- Producto 4 -->
+    <div class="product">
+        <img src="https://walmartni.vtexassets.com/arquivos/ids/443370/6149_01.jpg?v=638599534404230000" alt="Producto 4">
+        <h3>Pepsi en botella</h3>
+        <p>Bebida gaseosa</p>
+        <div class="price">C$19.00</div>
+        <div class="quantity">
+            <label for="quantity4">Cantidad: </label>
+            <input type="number" id="quantity4" name="quantity" min="1" value="1">
+        </div>
+        <button class="add-to-cart">Añadir al carrito</button>
+    </div>
+ 
+
+     <!-- Producto 5 -->
+     <div class="product">
+        <img src="https://walmartni.vtexassets.com/arquivos/ids/336276/Bebida-Prix-Cola-Lata-355ml-2-18152.jpg?v=638415561967270000" alt="Producto 5">
+        <h3>Prixcola en lata</h3>
+        <p>Bebida Gaseosa</p>
+        <div class="price">C$18.00</div>
+        <div class="quantity">
+            <label for="quantity5">Cantidad: </label>
+            <input type="number" id="quantity5" name="quantity" min="1" value="1">
+        </div>
+        <button class="add-to-cart">Añadir al carrito</button>
+    </div>
+
+
+<!-- Producto 6 -->
+    <div class="product">
+        <img src="https://walmartni.vtexassets.com/arquivos/ids/336382/Refresco-Gaseoso-Prix-Cola-355ml-2-13568.jpg?v=638415562485200000" alt="Producto 6">
+        <h3>Prixcola en botella</h3>
+        <p>Bebida gaseosa</p>
+        <div class="price">C$15.00</div>
+        <div class="quantity">
+            <label for="quantity6">Cantidad: </label>
+            <input type="number" id="quantity6" name="quantity" min="1" value="1">
+        </div>
+        <button class="add-to-cart">Añadir al carrito</button>
+    </div>
+</div>
+
+<div class="container">
+    <!-- Producto 7 -->
+    <div class="product">
+        <img src="https://walmartni.vtexassets.com/arquivos/ids/298950/Jugo-Kerns-De-Vegetales-Lata-330ml-1-1990.jpg?v=638301405986400000" alt="Producto 7">
+        <h3>Jugo Kerns en lata</h3>
+        <p>Néctar</p>
+        <div class="price">C$25.00</div>
+        <div class="quantity">
+            <label for="quantity7">Cantidad: </label>
+            <input type="number" id="quantity7" name="quantity" min="1" value="1">
+        </div>
+        <button class="add-to-cart">Añadir al carrito</button>
+    </div>
+
+<!-- Producto 8 -->
+<div class="product">
+    <img src="https://www.coca-cola.com/content/dam/onexp/sv/es/brands/del-valle/del-valle-fresh-naranja.png" alt="Producto 8">
+    <h3>Jugo Del Valle de Naranja</h3>
+    <p>Jugo</p>
+    <div class="price">C$30.00</div>
+    <div class="quantity">
+        <label for="quantity8">Cantidad: </label>
+        <input type="number" id="quantity8" name="quantity" min="1" value="1">
+    </div>
+    <button class="add-to-cart">Añadir al carrito</button>
+</div>
+
+<!-- Producto 9-->
+<div class="product">
+    <img src="https://walmartni.vtexassets.com/arquivos/ids/187429/Agua-ALPINA-purificada-x600ml-2-7673.jpg?v=637750293470100000" alt="Producto 9">
+    <h3>Agua purificada 600 ml</h3>
+    <p>Agua</p>
+    <div class="price">C$20.00</div>
+    <div class="quantity">
+        <label for="quantity9">Cantidad: </label>
+        <input type="number" id="quantity9" name="quantity" min="1" value="1">
+    </div>
+    <button class="add-to-cart">Añadir al carrito</button>
+     </div>
+</div>
+
+<div class="container">
+    <!-- Producto 10 -->
+    <div class="product">
+        <img src="https://walmartni.vtexassets.com/arquivos/ids/382318/Agua-Purificada-Great-Value-Botella-1000-ml-1-9604.jpg?v=638484364276500000" alt="Producto 10">
+        <h3>Agua purificada 1 litro</h3>
+        <p>Agua</p>
+        <div class="price">C$30.00</div>
+        <div class="quantity">
+            <label for="quantity10">Cantidad: </label>
+            <input type="number" id="quantity10" name="quantity" min="1" value="1">
+        </div>
+        <button class="add-to-cart">Añadir al carrito</button>
+    </div>
+
+
+    <!-- Producto 11 -->
+    <div class="product">
+        <img src="https://walmartni.vtexassets.com/arquivos/ids/312133/Refresco-Kola-Shaler-Light-354ml-1-2423.jpg?v=638324518396270000" alt="Producto 11">
+        <h3>Kola Shaler 354 ml</h3>
+        <p>Bebida refrescante</p>
+        <div class="price">C$25.00</div>
+        <div class="quantity">
+            <label for="quantity11">Cantidad: </label>
+            <input type="number" id="quantity11" name="quantity" min="1" value="1">
+        </div>
+        <button class="add-to-cart">Añadir al carrito</button>
+    </div>
+
+
+    <!-- Producto 12 -->
+    <div class="product">
+        <img src="https://walmarthn.vtexassets.com/arquivos/ids/354821/Bebida-Raptor-Energizante-500Ml-2-8331.jpg?v=638417182448570000" alt="Producto 12">
+        <h3>Raptor</h3>
+        <p>Energisante</p>
+        <div class="price">C$40.00</div>
+        <div class="quantity">
+            <label for="quantity12">Cantidad: </label>
+            <input type="number" id="quantity12" name="quantity" min="1" value="1">
+        </div>
+        <button class="add-to-cart">Añadir al carrito</button>
+    </div>
+</div>
+ 
+
+<div class="container">
+    <!--Producro 13-->
+    <div class="product">
+        <img src="https://walmartni.vtexassets.com/arquivos/ids/211520/Suero-Electrolit-Adulto-Sabor-Jamaica-625ml-1-15913.jpg?v=637865308296200000" alt="Producto 13">
+        <h3>Suero elctrolit</h3>
+        <p>Hidratante</p>
+        <div class="price">C$115.00</div>
+        <div class="quantity">
+            <label for="quantity13">Cantidad: </label>
+            <input type="number" id="quantity13" name="quantity" min="1" value="1">
+            </div>
+            <button class="add-to-cart">Añadir al carrito</button>
+</div>
+
+<!-- Producto 14-->
+ <div class="product">
+    <img src="https://walmartni.vtexassets.com/arquivos/ids/166724/Cerveza-Victoria-Clasic-Botella-350Ml-1-2464.jpg?v=637689918441530000" alt="Producto 14">
+    <h3>Cerveza Victoria Clásica</h3>
+    <p>Alcohol</p>
+    <div class="price">C$30.00</div>
+    <div class="quantity">
+        <label for="quantity14">Cantidad: </label>
+        <input type="number" id="quantity14" name="quantity" min="1" value="1">
+        </div>
+        <button class="add-to-cart">Añadir al carrito</button>
+</div>
+
+<!-- Producto 15-->
+ <div class="product">
+    <img src="https://walmartni.vtexassets.com/arquivos/ids/166727/Cerveza-Victoria-Frost-Botella-350Ml-1-2471.jpg?v=637689918478670000" alt="Producto 15">
+    <h3>Cerveza Victoria Frost</h3>
+    <p>Alcohol</p>
+    <div class="price">C$35.00</div>
+    <div class="quantity">
+        <label for="quantity15">Cantidad: </label>
+        <input type="number" id="quantity15" name="quantity" min="1" value="1">
+        </div>
+        <button class="add-to-cart">Añadir al carrito</button>
+        </div>
+</div>
+<body>
+    <!-- Tu contenido actual de productos va aquí -->
+
+    <div class="container">
+        <!-- Productos existentes -->
+    </div>
+
+    <!-- Contenedor del carrito -->
+    <div id="shopping-cart">
+        <h2>Carrito de Compras de "EL PERUANO"</h2>
+        <ul id="cart-items"></ul>
+        <div id="cart-total">Total por su compra: C$0.00</div>
+        <button id="clear-cart">Limpiar Carrito</button>
+    </div>
+    
+    <script>
+        const cart = [];
+const cartItemsContainer = document.getElementById('cart-items');
+const cartTotal = document.getElementById('cart-total');
+const clearCartButton = document.getElementById('clear-cart');
+
+document.querySelectorAll('.add-to-cart').forEach((button) => {
+    button.addEventListener('click', () => {
+        const product = button.closest('.product');
+        const name = product.querySelector('h3').innerText;
+        const price = parseFloat(product.querySelector('.price').innerText.replace('C$', ''));
+        const quantity = parseInt(product.querySelector('input').value);
+        const imageUrl = product.querySelector('img').src; // Obtener la URL de la imagen
+
+        // Verificar si el producto ya existe en el carrito
+        const existingProduct = cart.find(item => item.name === name);
+
+        if (existingProduct) {
+            existingProduct.quantity += quantity;
+        } else {
+            cart.push({ name, price, quantity, imageUrl });
+        }
+
+        updateCart();
+    });
+});
+
+function updateCart() {
+    cartItemsContainer.innerHTML = '';
+    let total = 0;
+
+    cart.forEach(item => {
+        // Crear el contenedor del producto en el carrito
+        const li = document.createElement('li');
+        li.style.display = 'flex';
+        li.style.alignItems = 'center';
+        li.style.marginBottom = '10px';
+
+        // Imagen del producto
+        const img = document.createElement('img');
+        img.src = item.imageUrl;
+        img.alt = item.name;
+        img.style.width = '50px';
+        img.style.height = '50px';
+        img.style.marginRight = '10px';
+
+        // Texto del producto
+        const text = document.createElement('span');
+        text.innerText = `${item.name} - C$${item.price} x ${item.quantity} = C$${(item.price * item.quantity).toFixed(2)}`;
+
+        // Agregar imagen y texto al contenedor
+        li.appendChild(img);
+        li.appendChild(text);
+
+        // Agregar a la lista del carrito
+        cartItemsContainer.appendChild(li);
+
+        total += item.price * item.quantity;
+    });
+
+    cartTotal.innerText = `Total por su compra: C$${total.toFixed(2)}`;
+}
+
+// Limpiar el carrito
+clearCartButton.addEventListener('click', () => {
+    cart.length = 0; // Vacía el array
+    updateCart(); // Actualiza la vista
+});
+    </script>
+
+</body>
+</html>
